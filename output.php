@@ -1,54 +1,54 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Menschen Table</title>
+    <title>Menschen Tabelle</title>
     <style>
         table {
-            border-collapse: collapse;
-            width: 50%;
-            margin: auto;
+            border-collapse: collapse; /* Zellengrenzen zusammenführen */
+            width: 50%; /* Tabelle auf 50% der Breite zentrieren */
+            margin: auto; /* Zentrieren auf der Seite */
         }
 
         th, td {
-            border: 1px solid black;
-            padding: 8px;
-            text-align: left;
+            border: 1px solid black; /* Schwarzer Rand um Zellen */
+            padding: 8px; /* Innenabstand der Zellen */
+            text-align: left; /* Text linksbündig ausrichten */
         }
 
         th {
-            background-color: #f2f2f2;
+            background-color: #f2f2f2; /* Hintergrundfarbe der Überschriftenzelle */
         }
     </style>
 </head>
 <body>
 
-<h2>Menschen Table</h2>
+<h2>Menschen Tabelle</h2>
 
 <?php
 try {
 
-    $db = new SQLite3('Kuchen.sqlite');
+    $db = new SQLite3('Kuchen.sqlite'); // SQLite-Datenbank erstellen oder verbinden
 
-    $query = 'SELECT * FROM Menschen';
+    $query = 'SELECT * FROM Menschen'; // Abfrage für alle Einträge in der Tabelle Menschen
 
-    $result = $db->query($query);
+    $result = $db->query($query); // Abfrage ausführen
 
     echo '<table>';
-    echo '<tr><th>ID</th><th>Name</th></tr>';
+    echo '<tr><th>ID</th><th>Name</th></tr>'; // Überschriftenzeile der Tabelle
 
     while ($row = $result->fetchArray()) {
         $id = $row['id'];
         $name = $row['name'];
 
-        echo "<tr><td>$id</td><td>$name</td></tr>";
+        echo "<tr><td>$id</td><td>$name</td></tr>"; // Datenzeile der Tabelle
     }
 
     echo '</table>';
 
-    $db->close();
+    $db->close(); // Datenbankverbindung schließen
 } catch (Exception $e) {
 
-    echo 'An error occurred: ' . $e->getMessage();
+    echo 'Ein Fehler ist aufgetreten: ' . $e->getMessage();
 }
 ?>
 
