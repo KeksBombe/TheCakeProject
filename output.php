@@ -39,8 +39,9 @@ try {
     while ($row = $result->fetchArray()) {
         $id = $row['id'];
         $name = $row['name'];
+        $eintraeger = $row['eintraeger'];
 
-        echo "<tr><td>$id</td><td>$name</td></tr>"; // Datenzeile der Tabelle
+        echo "<tr><td>$id</td><td>$name</td><td>$eintraeger</td></tr>"; // Datenzeile der Tabelle
     }
 
     echo '</table>';
