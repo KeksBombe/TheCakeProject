@@ -10,7 +10,7 @@ ini_set('display_startup_errors', 1); // Startfehler auf der Seite anzeigen
 error_reporting(E_ALL); // Alle Arten von Fehlern anzeigen
 
 $name = $_POST["Name"]; // "Name" aus Formular erhalten
-$eintrager = $_POST["Eintraeger"];
+$eintrager = $_POST["eintraeger"];
 $currentTime = time(); // Aktuelle Zeit in Sekunden erhalten
 
 $database = new SQLite3('Kuchen.sqlite'); // SQLite-Datenbank erstellen oder verbinden, wenn vorhanden
