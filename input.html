@@ -3,14 +3,23 @@
     <head>
         <title>Kuchenliste</title>
         <meta charset="UTF-8">
-        <link rel="stylesheet" type="text/css" href="styleinput.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
     </head>
     <body>
         <form action="process-form.php" method="post">
             <label for="Name">Name:</label>
-            <input type="text" id="Name" name="Name">
+            <input type="text" required ="Name" name="Name">
+
+            <br>
+
+            <label for="eintraeger">Eingetragen von:</label>
+            <input type="text" required ="eintraeger" name="eintraeger">
+
+            <br>
+
+            <input type="checkbox" required name="AGBs">
+            <label for="AGBs">Ich habe die <a href="AGB.html">AGBs</a>gelesen und akzeptiere sie</label>
 
             <br>
 
