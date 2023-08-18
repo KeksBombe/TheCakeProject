@@ -18,15 +18,15 @@ $database = new SQLite3('Kuchen.sqlite'); // SQLite-Datenbank erstellen oder ver
 $sql = "CREATE TABLE IF NOT EXISTS Menschen (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT NOT NULL,
-    eintrager TEXT NOT NULL,
+    eintraeger TEXT NOT NULL,
     timestamp INTEGER
     )";
 
 $database->exec($sql); // SQL-Anweisung ausführen
 
-$stmt = $database->prepare("INSERT INTO Menschen (name, eintrager, timestamp) VALUES (?,?,?)"); // SQL-Anweisung für Einfügen vorbereiten
+$stmt = $database->prepare("INSERT INTO Menschen (name, eintraeger, timestamp) VALUES (?,?,?)"); // SQL-Anweisung für Einfügen vorbereiten
 $stmt->bindValue(1, $name); // Name an Parameter binden
-$stmt->bindValue(2, $eintrager); //Einträger wird ebenfalls gespeichert
+$stmt->bindValue(2, $eintraeger); //Einträger wird ebenfalls gespeichert
 $stmt->bindValue(3, $currentTime, SQLite3_INTEGER); // Aktuelle Zeit an Parameter binden
 
 if ($stmt->execute()) { // Wenn Anweisung erfolgreich ausgeführt wird
