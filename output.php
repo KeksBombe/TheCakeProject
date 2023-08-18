@@ -34,7 +34,7 @@ try {
     $result = $db->query($query); // Abfrage ausführen
 
     echo '<table>';
-    echo '<tr><th>ID</th><th>Name</th></tr>'; // Überschriftenzeile der Tabelle
+    echo '<tr><th>ID</th><th>Name</th><th>Einträger</th></tr>'; // Überschriftenzeile der Tabelle
 
     while ($row = $result->fetchArray()) {
         $id = $row['id'];
